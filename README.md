@@ -22,3 +22,13 @@ lern css layout [https://learnlayout.com/]
 
 
 + css元素 分类 https://blog.csdn.net/underoses/article/details/88770840
+
+
+
++ background 背景图片居中，平铺
+
+
+```css
+background: url("/imgs/icon-cart-checked.png") no-repeat center;
+background-size: contain;
+```
