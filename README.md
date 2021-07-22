@@ -12,6 +12,9 @@
 
 :triumph:
 
+Object.assign()  https://developer.mozilla.org/zh-CN/docs/orphaned/Web/JavaScript/Reference/Global_Objects/Object/assign
+
+
 # CSS
 
 ## 关于css难学的问题困境问题
