@@ -7,6 +7,10 @@
 
 [token] https://www.ruanyifeng.com/blog/2018/07/json_web_token-tutorial.html
 
+
+[http缓存] https://juejin.cn/post/6906400888571559949
+
+
 # - JS
 
 ### JS数据操作技巧 > 
