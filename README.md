@@ -1,6 +1,6 @@
-# HCJ_note
+# HCJ
 
-完全看心情，时候。大多数笔记都不在。
+
 
 
 # - Web
@@ -16,6 +16,10 @@
 ### JS数据操作技巧 > 
 
 Object.assign()  https://developer.mozilla.org/zh-CN/docs/orphaned/Web/JavaScript/Reference/Global_Objects/Object/assign
+
+### let var const 
+
+https://www.cnblogs.com/forcheng/p/13033976.html
 
 
 #### 为什么window上面没有 scrollTop的接口 ? 
