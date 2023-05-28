@@ -6,7 +6,7 @@ HTML CSS 的简单demo练习!
 #### :small_orange_diamond: [animation](./HCJ_demo/animation/)
 #### :small_orange_diamond: [inverted_border_card](./HCJ_demo/inverted_border_card/index.html)
 
-![Card Preview](./HCJ_demo/inverted_border_card/assets/cardPreview.PNG "Card Preview")
+![Card Preview](https://github.com/Joshua-leyer/HCJ_note/tree/master/HCJ_demo/inverted_border_card/assets/cardPreview.PNG "Card Preview")
 
 
 
