@@ -1,0 +1,38 @@
+
+h3 {
+    font-size: 22px;
+    line-height: 30px;
+}
+button {
+    border: 0;
+    outline: none;
+    background-color: transparent;
+}
+.btn1 {
+    position: absolute;
+    top: 10em;
+    right: 10em;
+    font-size: 2em;
+    font-weight: 700;
+    padding: 0.5em 1em;
+    color: salmon;
+    background-color: pink;
+    border: 10px solid salmon;
+    border-radius: 5px;
+
+    /* 定义过渡 */
+    /* transition-property: transform;
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
+    transition-delay: 0s; */
+
+    /* transition: transform 0.3s, background-color 0.3s,
+        color 0.3s; */
+    transition: all .3s;
+}
+
+.btn1:hover {
+    transform: translateY(-10px);
+    background-color: salmon;
+    color: white;
+}

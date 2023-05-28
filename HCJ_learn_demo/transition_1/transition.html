@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>transition</title>
+    <link rel="stylesheet" href="./transition.css">
+</head>
+<body>
+    <h3>
+        对 transition  属性的理解 <br>
+        给dom元素添加过渡监听器, transition-property 就是表明,要监听的CSS属性有哪些,多数时候为了方便值为 all,  <br>
+        一共有4个属性值: transition-property、transition-duration、transition-timing-function、transition-delay
+        <br >
+        一般使用过渡，都需要dom有个触发的动作, 例如hover.来触发,让css样式变更. 样式值的变化, 就会触发transition监听器.从而触发过渡动画效果
+        <br >
+    
+    </h3>
+    <span>
+        ! 注意区分 transform 变形属性, 因为单词都是tran开头, j在学习的时候就经常混乱. transfrom和其他height
+        ,color,background等属性是同一个层次的.
+    </span>
+    <button class="btn1">learn transition</button>
+</body>
+</html>
