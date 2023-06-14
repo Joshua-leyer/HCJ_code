@@ -1,30 +1,20 @@
 # HCJ
 
-:octocat: HTML CSS JS 的 项目 练习!
+:grinning: HTML CSS JS 的 小项目 练习
 
------------
 
-#### :small_orange_diamond: [transition](./HCJ_demo/transition/)
 
-#### :small_orange_diamond: [animation](http://htmlpreview.github.io/?https://github.com/Joshua-leyer/HCJ_note/blob/master/HCJ_demo/animation/animation.html)
 
-#### :small_orange_diamond: [inverted_border_card](http://htmlpreview.github.io/?https://github.com/Joshua-leyer/HCJ_note/blob/master/HCJ_demo/inverted_border_card/index.html)
-
-#### :small_orange_diamond: [月步式加载动画](http://htmlpreview.github.io/?https://github.com/Joshua-leyer/HCJ_note/blob/master/HCJ_demo/月步式加载动画/index.html)
+1. [transition](./HCJ_demo/transition/)  
+2. [animation](http://htmlpreview.github.io/?https://github.com/Joshua-leyer/HCJ_note/blob/master/HCJ_demo/animation/animation.html) 
+3. [inverted_border_card](http://htmlpreview.github.io/?https://github.com/Joshua-leyer/HCJ_note/blob/master/HCJ_demo/inverted_border_card/index.html) 
+4. [月步式加载动画](http://htmlpreview.github.io/?https://github.com/Joshua-leyer/HCJ_note/blob/master/HCJ_demo/月步式加载动画/index.html) 
+5. [时钟](https://github.com/Joshua-leyer/HCJ_note/blob/master/HCJ_demo/timeClock)
+6. [音乐播放器](https://github.com/Joshua-leyer/HCJ_note/blob/master/HCJ_demo/music-player) 
+7. [Glass风格的一个页面](http://htmlpreview.github.io/?https://github.com/Joshua-leyer/HCJ_note/blob/master/HCJ_demo/GlassWebsite/V1/index.html)
+8. [导航切换样式1](http://htmlpreview.github.io/?https://github.com/Joshua-leyer/HCJ_note/blob/master/HCJ_demo/导航切换样式1/index.html) 
 
 <!-- ![Card Preview](https://github.com/Joshua-leyer/HCJ_note/tree/master/HCJ_demo/inverted_border_card/assets/cardPreview.png "Card Preview") -->
-
-
-#### :small_orange_diamond: [时钟](https://github.com/Joshua-leyer/HCJ_note/blob/master/HCJ_demo/timeClock)
-
-#### :small_orange_diamond: [音乐播放器](https://github.com/Joshua-leyer/HCJ_note/blob/master/HCJ_demo/music-player)
-
-#### :small_orange_diamond: [Glass风格的一个页面](http://htmlpreview.github.io/?https://github.com/Joshua-leyer/HCJ_note/blob/master/HCJ_demo/GlassWebsite/V1/index.html)
-
-
-----------
-
-
 
 ### 关于css难学的问题困境问题
 

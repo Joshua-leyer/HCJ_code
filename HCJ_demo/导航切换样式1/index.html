@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>导航切换样式</title>
+    <link rel="stylesheet" href="s.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <!-- [bilibili看到的](https://www.bilibili.com/video/BV1W8411F7Rg/?spm_id_from=333.880.my_history.page.click&vd_source=d91978ae5c46d3cddb533eb8dfa0a7bb) -->
+    <div class="tabbar">
+		<ul>
+			<li class="item active" onclick="setActive(this,'--blue60')">
+				<i class="fa fa-heart-o"></i>
+			</li>
+			<li class="item" onclick="setActive(this,'--red60')">
+				<i class="fa fa-heart-o"></i>
+			</li>
+			<li class="item" onclick="setActive(this,'--green60')">
+				<i class="fa fa-plus-square-o"></i>
+			</li>
+			<li class="item" onclick="setActive(this,'--purple60')">
+				<i class="fa fa-bell-o"></i>
+			</li>
+			<li class="item" onclick="setActive(this,'--orange60')">
+				<i class="fa fa-user-o"></i>
+			</li>
+			<div class="active-circle"></div>
+		</ul>
+	</div>
+</body>
+<script>
+    let items = document.querySelectorAll('.item');
+    let active_circle = document.querySelector(".active-circle");
+    function setActive(_ele, bg_color) {
+        items.forEach((item) => {
+            item.classList.remove("active");
+        })
+        _ele.classList.add("active");
+        // active_circle.classList.add("jello");
+        // setTimeout(() => {
+        //     active_circle.classList.remove("jello");
+        // }, 500);
+        // 修改 全局定义的 --bg-color 变量值
+        document.documentElement.style.setProperty('--bg-color', 'var('+bg_color+')')
+    }
+</script>
+</html>
