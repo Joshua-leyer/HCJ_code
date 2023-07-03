@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="contain">
+        <div class="masonry">
+            <div class="item">1</div>
+            <div class="item">1</div>
+            <div class="item">1</div>
+            <div class="item">1</div>
+            <div class="item">1</div>
+            <div class="item">1</div>
+            <div class="item">1</div>
+            <div class="item">1</div>
+            <div class="item">1</div>
+            <div class="item">1</div>
+        </div>
+    </div>
+    <hr>
+    <div class="masonry">
+        <div class="item">1</div>
+        <div class="item">1</div>
+        <div class="item">1</div>
+        <div class="item">1</div>
+        <div class="item">1</div>
+        <div class="item">1</div>
+        <div class="item">1</div>
+        <div class="item">1</div>
+        <div class="item">1</div>
+        <div class="item">1</div>
+    </div>
+</body>
+<style> 
+
+body {
+    font-family: Helvetica;
+}
+.contain {
+    display: inline-block;
+    padding: 10px;
+    border: 2px solid salmon;
+}
+.masonry {
+    display: flex;
+    flex-direction: column;   /* 很奇怪 flex column 的方向会导致 父元素坍塌 ， 而 row 不会。*/
+    flex-wrap: wrap;
+    height: 400px;
+}
+.masonry .item {
+    height: 100px;
+    width: 100px;
+    margin: 4px;
+    background-color: #8bcda4;
+}
+
+.item {
+    position: relative;
+    width: 25%;
+    padding: 2px;
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    height: auto;
+
+}
+
+.item img {
+    display: block;
+    width: 100%;
+}
+
+</style>
+</html>

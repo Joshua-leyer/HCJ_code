@@ -1,0 +1,14 @@
+:root {
+    --card-width: 20vw;
+    --divider-width: 2vw;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.masonry {
+    width: calc(var(--card-width) * 4 + var(--divider-width) * 3);
+    
+}

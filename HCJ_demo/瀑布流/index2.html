@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>瀑布流 flex 方法</title>
+</head>
+<body>
+    <div class="test">
+        <div class="a">1</div>
+        <div class="a">1</div>
+        <div class="a">1</div>
+        <div class="a">1</div>
+        <div class="a">1</div>
+        <div class="a">1</div>
+        <div class="a">1</div>
+        <div class="a">1</div>
+    </div>
+    
+    <div class="masonry">
+        <div class="item">
+            <img  src="./assets/chijio.jpg" alt="" srcset="">
+        </div>
+        <div class="item">
+            <img  src="./assets/damir.jpg" alt="" srcset="">
+        </div>
+
+        <div class="item">
+            <img  src="./assets/quinter.jpg" alt="" srcset="">
+        </div>
+        <div class="item">
+            <img  src="./assets/turgut.jpg" alt="" srcset="">
+        </div>
+        <div class="item">
+            <img  src="./assets/bgkei.jpg" alt="" srcset="">
+        </div>
+    </div>
+</body>
+
+<style>
+
+.test {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 400px;
+}
+.test .a {
+    height: 100px;
+    width: 100px;
+    margin: 10px;
+    background-color: red;
+}
+
+
+
+
+
+body {
+    margin: 4px;
+    margin: auto;
+}
+.masonry {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: 2000px;
+}
+
+.item {
+    position: relative;
+    box-sizing: border-box;
+    width: 25%;
+    /* display: inline-block; */
+    padding: 2px;
+}
+.item img {
+    /* max-width: 300px; */
+    width: 100%;
+    display: block;
+    height: auto;
+}
+
+
+
+
+
+</style>
+
+
+
+<script>
+
+</script>
+</html>

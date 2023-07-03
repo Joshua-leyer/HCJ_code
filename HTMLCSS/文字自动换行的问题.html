@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+</head>
+<body>
+    <button value="YES! ">YES! </button>
+    <hr />
+  
+    <p id="p1">段落的第一行。</p>
+
+
+    <div>-=-----------------------------------------------</div>
+
+    <hr />
+
+    <div id="my_title">title</div>
+    <p id="p2">body</p>
+    <hr />
+    <div>看上面的测试 ，总结： 
+        <p>如果在文本最后添加的有空格 ，那么就可以自动换行。没有空格就不行</p>
+        <p>正常的逻辑，添加文本，按理说就能够自动换行的，但是不行，不知道为什么</p>
+        <p>如果给css样式添加  word-wrap:break-word; 即使不在末尾添加 空格 也可以换行。</p>
+
+    </div>
+    <a href="https://www.cnblogs.com/KillBugMe/p/13602055.html"> css 内容超出了div的宽度如何自动换行</a>
+    https://www.cnblogs.com/KillBugMe/p/13602055.html
+</body>
+<script>
+
+    const p1 = document.getElementById("p1"),
+    button = document.body.querySelector("button");
+    function addTextNode(text) {
+        p1.appendChild( document.createTextNode(text) );
+    }
+    button.addEventListener("click", () =>
+        addTextNode(button.value)
+    )
+
+
+    const title = document.getElementById("my_title");
+    const p2 = document.getElementById("p2");
+
+    function addTextNode1(ele, text) {
+        ele.appendChild( document.createTextNode(text) );
+    }
+
+    title.addEventListener('click', function(event) {
+        addTextNode1(p2, '测试 ')
+        // addTextNode1(p2, '没有空格')
+        // console.log(p2.target)
+        // addTextNode1(p2, button.value)
+    })
+
+
+</script>
+
+<style>
+    #p1 {
+        height: 100px;
+        width: 100px;
+        border: 2px solid saddlebrown;
+
+    }
+    #p2 {
+        min-height: 100px;
+        height: auto;
+        width: 100px;
+        border: 2px solid saddlebrown;
+        word-wrap: break-word; 
+    }
+</style>
+</html>
