@@ -3,7 +3,6 @@ function getFile() {
         console.log(`c`)      
     }, 2000)
 }
-
 const p = new Promise();
 console.log(p);   // TypeError: undefined is not a function!
 const p1 = new Promise('lin');
@@ -22,4 +21,19 @@ console.log('@2');  // lan  @2  上面的传入的函数参数是一个同步的
 // executer()函数会接受两个参数, 官方约定的分别用形参: resolve、 reject接收
 
 
+// 2
+// Promise 第一个参数是函数，这个函数是一个执行器。
+// 实例化时候自动执行里面的内容.
+function loadImg(src) {
+    return new Promise((resolve, reject) => {
+        const img = document.createElement("img")
+        img.onload = function() {  
+            resolve(img)
+        }
+        img.onerror = function() {
+            reject(new Error(`loadError ${url}`))
+        }
+        img.src = src;
+    })
+}
 

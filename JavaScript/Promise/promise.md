@@ -3,7 +3,7 @@
 
 promise 是为了解决callback hall ，地狱回调诞生的。
 
-Promise “承诺” ， 
+Promise “承诺” ， 一个承诺。在实例化Promise的时候传递的回调函数里面的内容就是，
 
 
 
