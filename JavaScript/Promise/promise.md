@@ -1,6 +1,9 @@
-[尚硅谷-promise部分的课程](https://www.bilibili.com/video/BV17U4y1n7qd/?spm_id_from=333.337.search-card.all.click&vd_source=d91978ae5c46d3cddb533eb8dfa0a7bb)
+## 资料
+- [尚硅谷-promise部分的课程](https://www.bilibili.com/video/BV17U4y1n7qd/?spm_id_from=333.337.search-card.all.click&vd_source=d91978ae5c46d3cddb533eb8dfa0a7bb)
+- [ES6 => Promise](https://www.bilibili.com/video/BV17U4y1n7qd?p=7&vd_source=d91978ae5c46d3cddb533eb8dfa0a7bb)
 
 
+## 概念
 promise 是为了解决callback hall ，地狱回调诞生的。
 
 Promise “承诺” ， 一个承诺。在实例化Promise的时候传递的回调函数里面的内容就是，
@@ -26,7 +29,7 @@ Promise “承诺” ， 一个承诺。在实例化Promise的时候传递的回
 
 
 
-new Promise(executor函数)  , executor执行器
+**new Promise(executor函数)  , executor执行器**
 
 promise 对象  ， 这个叫做承诺的对象，有一个叫做状态的属性，我们需要利用它不同的状态。来做不同的对应处理
 最初是pending，初始化状态，
@@ -36,5 +39,18 @@ executer()函数会接受两个参数, 官方约定的分别用形参: resolve�
     2. 调用reject() 函数,会让Promise实例状态变为rejected状态.同时可以指定失败的reason
 
 
+看一个代码例子
+```js
+// 题目
+Promise.resolve().then(()=>{
+    log(1)
+    throw new Error('err')
+}).catch(()=> {    // 由于上面有一个报错， 这里会被执行，但是这个本身没有报错，最下面的 catch不会执行
+    log(2)
+}).catch(()=> {   // ! 注意这里不会被执行.
+    log(3)
+})
+// 1  2 
+```
+执行.then()  还是.catch() ，主要是看上一个链式函数中有没有报错，导致Promise的状态被修改，核心是根据Promise的状态判断执行哪一个.
 
-https://www.bilibili.com/video/BV17U4y1n7qd?p=7&vd_source=d91978ae5c46d3cddb533eb8dfa0a7bb
