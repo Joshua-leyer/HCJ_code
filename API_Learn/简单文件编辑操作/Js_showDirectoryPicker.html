@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文件操作</title>
+
+</head>
+<body>
+    <h1>javascript操作文件, 简易编辑器</h1>
+    <button id="readFolder">打开文件夹</button>
+    <div class="container">
+        <div id="fileTree"></div>
+            <div id="fileContent" class="language-html file-content" contenteditable="true" style="display: none;"></div>
+    </div>
+
+</body>
+<style>
+    ul {
+        list-style-type: none;
+        padding-left: 20px; 
+    }
+    li {
+        cursor: pointer; 
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: start;
+    }
+    .container{
+        width: 1000px;
+        padding-right: 50px;
+        display: flex;
+        justify-content: start;
+    }
+    .file-content {
+        margin-top: 20px;
+        white-space: pre-wrap; 
+        border: 1px solid #ccc; 
+        padding: 10px; 
+        min-height: 400px;
+        margin-left: 100px;
+        overflow-y: auto; 
+        flex: 1;
+    }
+    .delete-button {
+        margin-left: 10px;
+        cursor: pointer;
+        background-color: red; 
+        color: white;
+        border: none; 
+        padding: 5px;
+        border-radius: 3px;
+    }
+</style>
+
+<script>
+let currentFileHandle = null; // 变量用于存储当前文件句柄
+const fileTree = document.getElementById('fileTree');
+const fileContent = document.getElementById('fileContent');
+
+async function readDirectory(directoryHandle, parentElement) {
+    const ul = document.createElement('ul');
+    parentElement.appendChild(ul);
+    console.log(directoryHandle.values())
+    // 遍历目录中的每个条目
+    for await (const entry of directoryHandle.values()) {
+        console.log(`entry is :`, entry)
+        const li = document.createElement('li'); // 创建列表项
+        const entryName = document.createElement('span');
+        entryName.textContent = entry.name; // 设置列表项文本为条目名称
+        li.appendChild(entryName); 
+        ul.appendChild(li); 
+
+        if (entry.kind === 'directory') { // 如果条目是文件夹
+            entryName.textContent = `[文件夹] ${entry.name}`;
+            li.addEventListener('click', async (e) => {
+                e.stopPropagation(); // 阻止事件传播
+                if (li.classList.contains('open')) {
+                    // 如果文件夹已经展开，则收起文件夹
+                    li.classList.remove('open');
+                    li.querySelector('ul').remove();
+                } else {
+                    // 如果文件夹未展开，则展开文件夹并读取子文件夹内容
+                    li.classList.add('open');
+                    await readDirectory(entry, li);
+                }
+            });
+        } else if (entry.kind === 'file') { // 如果条目是文件
+            // 修改文件内容
+            li.addEventListener('click', async (e) => {
+                e.stopPropagation(); // 阻止事件传播
+                currentFileHandle = entry; // 设置当前文件句柄
+                const file = await entry.getFile(); // 获取文件对象
+                console.log(`get file 内容 : `, file)
+                const contents = await file.text(); // 读取文件内容为文本
+                fileContent.style.display = 'block';
+                fileContent.textContent = contents;// 显示文件内容
+            });
+            // 处理删除功能
+            const deleteButton = document.createElement('button');
+            deleteButton.textContent = '删除';
+            deleteButton.classList.add('delete-button');
+            deleteButton.addEventListener('click', async (e) => {
+                e.stopPropagation(); // 阻止事件传播
+                const confirmed = confirm(`确定删除 ${entry.name}?`);
+                if (confirmed) {
+                    await directoryHandle.removeEntry(entry.name);
+                    li.remove(); // 从DOM中移除列表项
+                    fileContent.innerHTML = ''; // 清空文件内容区域
+                    alert('文件删除成功!');
+                }
+            });
+            entryName.appendChild(deleteButton); // 将删除按钮添加到列表项中
+        }
+    }
+}
+
+
+document.getElementById('readFolder').addEventListener('click', async () => {
+    // 打开文件夹选择器，用户选择文件夹
+    const directoryHandle = await window.showDirectoryPicker();
+    fileTree.innerHTML = ''; // 清空文件树内容
+    fileContent.innerHTML = ''; // 清空文件内容区域
+    console.log(`选择文件夹，返回的是：`, directoryHandle)
+    // 递归读取文件夹内容并构建目录树
+
+    await readDirectory(directoryHandle, fileTree); // 开始读取根目录内容
+});
+
+// 添加键盘事件监听器，检测 Ctrl+S 组合键
+document.addEventListener('keydown', async (event) => {
+    if (event.ctrlKey && event.key === 's') { // 如果按下的是 Ctrl+S
+        event.preventDefault(); // 阻止默认保存行为
+        if (currentFileHandle) { // 如果有当前文件句柄
+            const writable = await currentFileHandle.createWritable(); // 创建可写流
+            await writable.write(document.getElementById('fileContent').textContent); // 写入编辑后的内容
+            await writable.close(); // 关闭可写流
+            alert('文件保存成功!'); // 显示保存成功提示
+        }
+    }
+});
+
+</script>
+</html>

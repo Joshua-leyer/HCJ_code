@@ -25,11 +25,14 @@
   :page_with_curl: [知乎其他人对这个事情的看法](https://www.zhihu.com/question/66167982/answer/1160351616)
 
 
-
-
+-----------------
+## 知识点小学习😀
+- 用Javascript在chrome实现一个系统文件编辑器
+  - 核心是使用 [showDirectoryPicker()](https://developer.mozilla.org/zh-CN/docs/Web/API/Window/showDirectoryPicker) Web API方法
+  - [MDN - 文件系统 API](https://developer.mozilla.org/zh-CN/docs/Web/API/File_System_API)
 ### Log
 
-### JS/
+### JS
 
 - arrBoolean.js 空数组布尔值？
 
