@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>读取多个标签内容整理成数组</title>
+</head>
+<body>
+  <ul class="side-ul mm-list mm-panel mm-opened mm-current" id="mm-0">
+    <li><a href="/css/css-course.html">CSS 教程</a></li>
+    <li><a href="/css/css-intro.html">CSS 简介</a></li>
+    <li><a href="/css/css-syntax.html">CSS 语法</a></li>
+    <li><a href="/css/css-selector.html">CSS 选择器</a></li>
+    <li><a href="/css/css-use.html">CSS 使用</a></li>
+    <li><a href="/css/css-remark.html">CSS 注释</a></li>
+    <li><a href="/css/css-background.html">CSS 背景</a></li>
+    <li><a href="/css/css-color.html">CSS 颜色</a></li>
+    <li><a href="/css/css-border.html">CSS 边框</a></li>
+    <li><a href="/css/css-margin.html">CSS 外边距</a></li>
+    <li><a href="/css/css-margin-collapse.html">CSS 外边距合并</a></li>
+    <li><a href="/css/css-padding.html">CSS 内边距</a></li>
+    <li><a href="/css/css-height-width.html">CSS 高度和宽度</a></li>
+    <li><a href="/css/css-boxmodel.html">CSS 框模型</a></li>
+    <li><a href="/css/css-outline.html">CSS 轮廓</a></li>
+    <li><a href="/css/css-text.html">CSS 文本</a></li>
+    <li><a href="/css/css-font.html">CSS 字体</a></li>
+    <li><a href="/css/css-icon.html">CSS 图标</a></li>
+    <li><a href="/css/css-link.html">CSS 链接</a></li>
+    <li><a href="/css/css-list.html">CSS 列表</a></li>
+    <li><a href="/css/css-table.html">CSS 表格</a></li>
+    <li><a href="/css/css-display.html">CSS 显示</a></li>
+    <li><a href="/css/css-width.html">CSS 最大宽度</a></li>
+    <li><a href="/css/css-position.html">CSS 定位</a></li>
+    <li><a href="/css/css-overflow.html">CSS 溢出</a></li>
+    <li><a href="/css/css-float.html">CSS 浮动</a></li>
+    <li><a href="/css/css-float-clear.html">CSS 浮动清除</a></li>
+    <li><a href="/css/css-float-example.html">CSS 浮动实例</a></li>
+    <li><a href="/css/css-inline-block.html">CSS inline-block</a></li>
+    <li><a href="/css/css-align.html">CSS 对齐</a></li>
+    <li><a href="/css/css-pseudo-class.html">CSS 伪类</a></li>
+    <li><a href="/css/css-pseudo-element.html">CSS 伪元素</a></li>
+    <li><a href="/css/css-opacity.html">CSS 透明度</a></li>
+    <li><a href="/css/css-navbar.html">CSS 导航栏</a></li>
+    <li><a href="/css/css-dropdown.html">CSS 下拉菜单</a></li>
+    <li><a href="/css/css-image-gallery.html">CSS 图片画廊</a></li>
+    <li><a href="/css/css-sprites.html">CSS 图像精灵</a></li>
+    <li><a href="/css/css-form.html">CSS 表单</a></li>
+    <li><a href="/css/css-counter.html">CSS 计数器</a></li>
+    <li class="li-current"><a href="#">CSS 网站布局</a></li>
+    <li><a href="/css/css-responsive-layout.html">CSS 响应式布局</a></li>
+    <li><a href="/css/css-unit.html">CSS 单位</a></li>
+    <li><a href="/css/css-specificity.html">CSS 特异性</a></li>
+    <li><a href="/css/css-important.html">CSS !important</a></li>
+    <li><a href="/css/css-grid.html">CSS 网格布局</a></li>
+    <li><a href="/css/css-voice.html">CSS 音频</a></li>
+    <li><a href="/css/cssref.html">CSS 属性大全</a></li>
+    <li><a href="/css/css-animatable.html">CSS 动画相关属性</a></li>
+    <li><a href="/css/cssref-browsersupport.html">CSS 浏览器支持</a></li>
+    <li><a href="/css/cssref-func.html">CSS 函数</a></li>
+    <li><a href="/css/cssref-selector.html">CSS 选择器</a></li>
+    <li><a href="/css/cssref-default-values.html">CSS 默认值</a></li>
+    <li class="li-arc"><a href="/css/css-entities.html">CSS 实体字符</a></li>
+  </ul>
+</body>
+<script>
+  /**
+   * 请不要使用 a 标签方式，练习获取子元素的 API 调用
+   */
+  const SelectDOM = document.getElementById('mm-0');
+  let childrenDOMs = SelectDOM.children;
+  let results = [];
+  // let resultsTring = ``;
+  Array.from(childrenDOMs).forEach(element => {
+    results.push(element.textContent)
+    // resultsTring += element.textContent.split(' ')[1] + ` `
+  });
+  console.log(results)
+</script>
+</html>
