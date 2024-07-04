@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <ul class="list-box">
+    <li class=""><a href="/video/BV1KJ411s7QJ?p=1" class="router-link-active" title="Week 0    Unit 0.0 Introduction">
+        <div class="clickitem">
+          <div class="link-content"><img src="//i0.hdslb.com/bfs/static/jinkela/video/asserts/playing.gif"
+              style="display: none;"> <span class="page-num">P1</span> <span class="part">Week 0 Unit 0.0
+              Introduction</span></div>
+          <div class="duration">01:43</div>
+        </div>
+      </a></li>
+    <li class="on"><a href="/video/BV1KJ411s7QJ?p=2" class="router-link-active" title="Week 0    Unit 0.1 The Road Ahead">
+        <div class="clickitem">
+          <div class="link-content"><img src="//i0.hdslb.com/bfs/static/jinkela/video/asserts/playing.gif" style=""> <span
+              class="page-num">P2</span> <span class="part">Week 0 Unit 0.1 The Road Ahead</span></div>
+          <div class="duration">10:39</div>
+        </div>
+      </a></li>
+    <li class=""><a href="/video/BV1KJ411s7QJ?p=3" class="router-link-active" title="Week 0 Unit 0.2 From Nand to Hack">
+        <div class="clickitem">
+          <div class="link-content"><img src="//i0.hdslb.com/bfs/static/jinkela/video/asserts/playing.gif"
+              style="display: none;"> <span class="page-num">P3</span> <span class="part">Week 0 Unit 0.2 From Nand to
+              Hack</span></div>
+          <div class="duration">08:01</div>
+        </div>
+      </a></li>
+    <li class=""><a href="/video/BV1KJ411s7QJ?p=4" class="router-link-active" title="Week 0 Unit 0.3 From Hack to Tetris">
+        <div class="clickitem">
+          <div class="link-content"><img src="//i0.hdslb.com/bfs/static/jinkela/video/asserts/playing.gif"
+              style="display: none;"> <span class="page-num">P4</span> <span class="part">Week 0 Unit 0.3 From Hack to
+              Tetris</span></div>
+          <div class="duration">03:05</div>
+        </div>
+      </a></li>
+    <li class=""><a href="/video/BV1KJ411s7QJ?p=5" class="router-link-active" title="Week0 Unit 0.4 Project 0 Overview">
+        <div class="clickitem">
+          <div class="link-content"><img src="//i0.hdslb.com/bfs/static/jinkela/video/asserts/playing.gif"
+              style="display: none;"> <span class="page-num">P5</span> <span class="part">Week0 Unit 0.4 Project 0
+              Overview</span></div>
+          <div class="duration">03:18</div>
+        </div>
+      </a></li>
+    <li class=""><a href="/video/BV1KJ411s7QJ?p=6" class="router-link-active" title="Week 1 Unit 1.1 Boolean Logic">
+        <div class="clickitem">
+          <div class="link-content"><img src="//i0.hdslb.com/bfs/static/jinkela/video/asserts/playing.gif"
+              style="display: none;"> <span class="page-num">P6</span> <span class="part">Week 1 Unit 1.1 Boolean
+              Logic</span></div>
+          <div class="duration">12:27</div>
+        </div>
+      </a></li>
+    <li class=""><a href="/video/BV1KJ411s7QJ?p=7" class="router-link-active"
+        title="Week 1 Unit 1.2 Boolean Function Synthesis">
+        <div class="clickitem">
+          <div class="link-content"><img src="//i0.hdslb.com/bfs/static/jinkela/video/asserts/playing.gif"
+              style="display: none;"> <span class="page-num">P7</span> <span class="part">Week 1 Unit 1.2 Boolean Function
+              Synthesis</span></div>
+          <div class="duration">09:50</div>
+        </div>
+      </a></li>
+    <li class=""><a href="/video/BV1KJ411s7QJ?p=8" class="router-link-active" title="Week 1 Unit 1.3 Logic Gates">
+        <div class="clickitem">
+          <div class="link-content"><img src="//i0.hdslb.com/bfs/static/jinkela/video/asserts/playing.gif"
+              style="display: none;"> <span class="page-num">P8</span> <span class="part">Week 1 Unit 1.3 Logic
+              Gates</span></div>
+          <div class="duration">10:06</div>
+        </div>
+      </a></li>
+    <li class=""><a href="/video/BV1KJ411s7QJ?p=9" class="router-link-active"
+        title="Week 1 Unit 1.4 Hardware Description Language">
+        <div class="clickitem">
+          <div class="link-content"><img src="//i0.hdslb.com/bfs/static/jinkela/video/asserts/playing.gif"
+              style="display: none;"> <span class="page-num">P9</span> <span class="part">Week 1 Unit 1.4 Hardware
+              Description Language</span></div>
+          <div class="duration">18:29</div>
+        </div>
+      </a></li>
+  </ul>
+</body>
+
+<script>
+
+
+  /**
+   * 有趣的小难点： 我发现默认的 html 中一个标签内部有换行的情况，那么怎么获取才能不获取到换行符，
+   * 后面多的空白怎么保留一个空白
+   */
+  const selectElements = document.querySelectorAll('.link-content');
+  let resultArray = [];
+  selectElements.forEach(element => {
+    // 获取 "page-num" 和 "part" 元素的内容
+    let pageNum = element.querySelector(".page-num").textContent.replace(/[\n\s]+/g, " ");
+    let part = element.querySelector(".part").textContent.replace(/[\n\s]+/g, " ");
+
+    // 获取 "duration" 元素的内容
+    let durationElement = element.nextElementSibling;
+    let duration = durationElement.textContent.replace(/[\n\s]+/g, " ");
+
+    // 将内容拼接成一个字符串并添加到数组中
+    let resultString = `${pageNum} - ${part} - ${duration}`;
+    resultArray.push(resultString);
+  })
+  console.log(resultArray)
+</script>
+</html>
